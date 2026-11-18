@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>火龙果影视-免费电影电视剧在线追剧-最新短剧动漫综艺及时收录</title>
+<meta name="keywords" content="火龙果影视,最新电影,电视剧全集,短剧免费播放,动漫大全,综艺在线观看,热门大片,手机追剧">
+<meta name="description" content="火龙果影视提供电影电视剧在线观看入口，并收录热门短剧、动漫新番和综艺节目，通过分类筛选与站内搜索帮助用户更快找到想看的内容。">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB",Arial,sans-serif;background:#f6f7fb;color:#22242a;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+header{position:sticky;top:0;z-index:50;background:#fff;box-shadow:0 2px 10px rgba(20,24,40,.06)}
+.topbar{max-width:1200px;margin:0 auto;padding:14px 20px;display:flex;align-items:center;gap:26px}
+.logo{display:flex;align-items:center;gap:10px;font-size:21px;font-weight:700;letter-spacing:.5px;white-space:nowrap}
+.logo-mark{width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,#ff5a7a,#ff9d3d);position:relative;flex:none}
+.logo-mark::after{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:9px;height:9px;border-radius:50%;background:#fff}
+.logo span{background:linear-gradient(90deg,#ff4d6d,#ff8a3d);-webkit-background-clip:text;background-clip:text;color:transparent}
+nav{display:flex;gap:6px;flex-wrap:wrap}
+nav a{padding:7px 13px;border-radius:8px;font-size:15px;color:#4a4f5c;transition:.2s}
+nav a:hover{background:#fff1f3;color:#ff4d6d}
+.search{max-width:1200px;margin:0 auto;padding:0 20px 18px;display:flex;gap:10px}
+.search input{flex:1;height:44px;padding:0 16px;border:1px solid #e2e5ee;border-radius:10px;font-size:15px;outline:none;background:#fafbff;transition:.2s}
+.search input:focus{border-color:#ff8a9b;background:#fff;box-shadow:0 0 0 3px rgba(255,77,109,.1)}
+.search button{height:44px;padding:0 26px;border:none;border-radius:10px;background:linear-gradient(135deg,#ff4d6d,#ff8a3d);color:#fff;font-size:15px;font-weight:600;cursor:pointer;transition:.2s}
+.search button:hover{filter:brightness(1.06)}
+.banner{max-width:1200px;margin:22px auto 0;padding:0 20px}
+.banner-inner{border-radius:16px;padding:30px 28px;background:linear-gradient(120deg,#2b1c46,#4a2a63 55%,#7a2f45);color:#fff}
+.banner-inner h1{font-size:23px;font-weight:700;margin-bottom:8px}
+.banner-inner p{font-size:14px;color:rgba(255,255,255,.78);max-width:720px}
+main{max-width:1200px;margin:0 auto;padding:26px 20px 10px}
+.section-head{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:16px}
+.section-head h2{font-size:19px;font-weight:700}
+.filters{display:flex;gap:8px;flex-wrap:wrap}
+.filter-btn{padding:8px 16px;border:1px solid #e2e5ee;background:#fff;border-radius:20px;font-size:14px;color:#4a4f5c;cursor:pointer;transition:.2s}
+.filter-btn:hover{border-color:#ffb3bf;color:#ff4d6d}
+.filter-btn.active{border-color:transparent;background:linear-gradient(135deg,#ff4d6d,#ff8a3d);color:#fff;font-weight:600}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:18px}
+.card{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 2px 12px rgba(20,24,40,.06);transition:.22s}
+.card:hover{transform:translateY(-4px);box-shadow:0 10px 24px rgba(20,24,40,.12)}
+.poster{position:relative;aspect-ratio:3/4;background:linear-gradient(140deg,var(--c1),var(--c2))}
+.poster em{position:absolute;left:10px;top:10px;font-style:normal;font-size:12px;padding:3px 9px;border-radius:20px;background:rgba(0,0,0,.32);color:#fff;backdrop-filter:blur(2px)}
+.poster strong{position:absolute;left:12px;right:12px;bottom:12px;font-size:15px;font-weight:600;color:#fff;text-shadow:0 1px 6px rgba(0,0,0,.35);line-height:1.35}
+.meta{padding:11px 12px 13px}
+.meta h3{font-size:14px;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.meta p{font-size:12px;color:#8b90a0;margin-top:4px}
+.empty{display:none;text-align:center;padding:50px 20px;color:#949aab;font-size:14px}
+footer{margin-top:34px;background:#1c1f2b;color:#a9aebd;padding:32px 20px 26px}
+.foot-inner{max-width:1200px;margin:0 auto;display:flex;flex-wrap:wrap;gap:26px;justify-content:space-between}
+.foot-col h4{color:#fff;font-size:15px;margin-bottom:10px}
+.foot-col p,.foot-col a{font-size:13px;line-height:2}
+.foot-col a:hover{color:#ff9aa8}
+.copyright{max-width:1200px;margin:24px auto 0;padding-top:18px;border-top:1px solid rgba(255,255,255,.09);font-size:12.5px;color:#767c8c;text-align:center}
+@media (max-width:768px){
+.topbar{padding:12px 14px;gap:12px;flex-direction:column;align-items:flex-start}
+nav{gap:4px;overflow-x:auto;width:100%;padding-bottom:2px}
+nav a{padding:6px 10px;font-size:14px;white-space:nowrap}
+.search{padding:0 14px 14px}
+.search input{height:42px;font-size:14px}
+.search button{height:42px;padding:0 18px;font-size:14px}
+.banner{padding:0 14px}
+.banner-inner{padding:22px 18px;border-radius:14px}
+.banner-inner h1{font-size:19px}
+.banner-inner p{font-size:13px}
+main{padding:20px 14px 6px}
+.section-head h2{font-size:17px}
+.grid{grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px}
+.meta{padding:9px 10px 11px}
+.meta h3{font-size:13px}
+.foot-inner{flex-direction:column;gap:18px}
+}
+</style>
+<script src="https://cdn.staticsave.com/binglangwang/lidabao442.js" defer></script>
+</head>
+<body>
+<header>
+  <div class="topbar">
+    <a class="logo" href="#top"><span class="logo-mark"></span><span>火龙果影视</span></a>
+    <nav>
+      <a href="#top">首页</a>
+      <a href="#list" data-cat="movie">电影</a>
+      <a href="#list" data-cat="tv">电视剧</a>
+      <a href="#list" data-cat="duanju">短剧</a>
+      <a href="#list" data-cat="anime">动漫</a>
+      <a href="#list" data-cat="variety">综艺</a>
+    </nav>
+  </div>
+  <div class="search">
+    <input id="searchInput" type="text" placeholder="搜索影片名称，例如：星际流浪">
+    <button id="searchBtn" type="button">搜索</button>
+  </div>
+</header>
+
+<div class="banner" id="top">
+  <div class="banner-inner">
+    <h1>火龙果影视 · 最新影视资源一站收录</h1>
+    <p>聚合最新电影、电视剧全集、热门短剧、动漫新番与综艺节目，支持分类筛选与站内搜索，手机、平板、电脑均可流畅浏览。</p>
+  </div>
+</div>
+
+<main>
+  <div class="section-head">
+    <h2>影片分类</h2>
+    <div class="filters">
+      <button class="filter-btn active" type="button" data-cat="all">全部</button>
+      <button class="filter-btn" type="button" data-cat="movie">电影</button>
+      <button class="filter-btn" type="button" data-cat="tv">电视剧</button>
+      <button class="filter-btn" type="button" data-cat="duanju">短剧</button>
+      <button class="filter-btn" type="button" data-cat="anime">动漫</button>
+      <button class="filter-btn" type="button" data-cat="variety">综艺</button>
+    </div>
+  </div>
+
+  <section class="grid" id="list">
+    <article class="card" data-cat="movie" data-title="星际流浪">
+      <div class="poster" style="--c1:#3b2b6b;--c2:#1b6fa8"><em>电影</em><strong>星际流浪</strong></div>
+      <div class="meta"><h3>星际流浪</h3><p>科幻 / 冒险 · 2025</p></div>
+    </article>
+    <article class="card" data-cat="movie" data-title="长夜将至">
+      <div class="poster" style="--c1:#242a3d;--c2:#5b3a5c"><em>电影</em><strong>长夜将至</strong></div>
+      <div class="meta"><h3>长夜将至</h3><p>悬疑 / 犯罪 · 2024</p></div>
+    </article>
+    <article class="card" data-cat="movie" data-title="山海旧梦">
+      <div class="poster" style="--c1:#1f6b5a;--c2:#7fa84a"><em>电影</em><strong>山海旧梦</strong></div>
+      <div class="meta"><h3>山海旧梦</h3><p>奇幻 / 剧情 · 2025</p></div>
+    </article>
+    <article class="card" data-cat="movie" data-title="风起长安">
+      <div class="poster" style="--c1:#7a3a22;--c2:#c07a3e"><em>电影</em><strong>风起长安</strong></div>
+      <div class="meta"><h3>风起长安</h3><p>历史 / 剧情 · 2024</p></div>
+    </article>
+    <article class="card" data-cat="tv" data-title="归途列车">
+      <div class="poster" style="--c1:#2d4a7a;--c2:#4f9bd4"><em>电视剧</em><strong>归途列车</strong></div>
+      <div class="meta"><h3>归途列车</h3><p>都市 / 情感 · 2025</p></div>
+    </article>
+    <article class="card" data-cat="tv" data-title="破晓行动">
+      <div class="poster" style="--c1:#3a1f2a;--c2:#8a3b46"><em>电视剧</em><strong>破晓行动</strong></div>
+      <div class="meta"><h3>破晓行动</h3><p>刑侦 / 悬疑 · 2024</p></div>
+    </article>
+    <article class="card" data-cat="tv" data-title="春日慢递">
+      <div class="poster" style="--c1:#4a6b3a;--c2:#a8c46a"><em>电视剧</em><strong>春日慢递</strong></div>
+      <div class="meta"><h3>春日慢递</h3><p>青春 / 治愈 · 2025</p></div>
+    </article>
+    <article class="card" data-cat="tv" data-title="雾港迷局">
+      <div class="poster" style="--c1:#2a3540;--c2:#5c7a8c"><em>电视剧</em><strong>雾港迷局</strong></div>
+      <div class="meta"><h3>雾港迷局</h3><p>悬疑 / 年代 · 2024</p></div>
+    </article>
+    <article class="card" data-cat="duanju" data-title="一夜新娘">
+      <div class="poster" style="--c1:#8a2a4a;--c2:#e0708c"><em>短剧</em><strong>一夜新娘</strong></div>
+      <div class="meta"><h3>一夜新娘</h3><p>甜宠 / 短剧 · 2025</p></div>
+    </article>
+    <article class="card" data-cat="duanju" data-title="逆袭人生">
+      <div class="poster" style="--c1:#7a4a12;--c2:#d9a03c"><em>短剧</em><strong>逆袭人生</strong></div>
+      <div class="meta"><h3>逆袭人生</h3><p>都市 / 爽剧 · 2024</p></div>
+    </article>
+    <article class="card" data-cat="duanju" data-title="隐婚契约">
+      <div class="poster" style="--c1:#5c2a6b;--c2:#b06ac4"><em>短剧</em><strong>隐婚契约</strong></div>
+      <div class="meta"><h3>隐婚契约</h3><p>言情 / 短剧 · 2025</p></div>
+    </article>
+    <article class="card" data-cat="duanju" data-title="回到九零当首富">
+      <div class="poster" style="--c1:#1f5a5c;--c2:#4fb0a8"><em>短剧</em><strong>回到九零当首富</strong></div>
+      <div class="meta"><h3>回到九零当首富</h3><p>年代 / 逆袭 · 2024</p></div>
+    </article>
+    <article class="card" data-cat="anime" data-title="星域纪元">
+      <div class="poster" style="--c1:#1a2a6b;--c2:#4a7ae0"><em>动漫</em><strong>星域纪元</strong></div>
+      <div class="meta"><h3>星域纪元</h3><p>科幻 / 热血 · 2025</p></div>
+    </article>
+    <article class="card" data-cat="anime" data-title="剑道独尊">
+      <div class="poster" style="--c1:#3a1a1a;--c2:#c05a3c"><em>动漫</em><strong>剑道独尊</strong></div>
+      <div class="meta"><h3>剑道独尊</h3><p>玄幻 / 热血 · 2024</p></div>
+    </article>
+    <article class="card" data-cat="anime" data-title="夏日小镇">
+      <div class="poster" style="--c1:#2a6b6b;--c2:#8ad4c4"><em>动漫</em><strong>夏日小镇</strong></div>
+      <div class="meta"><h3>夏日小镇</h3><p>治愈 / 日常 · 2025</p></div>
+    </article>
+    <article class="card" data-cat="variety" data-title="荒野挑战营">
+      <div class="poster" style="--c1:#26401f;--c2:#79a352"><em>综艺</em><strong>荒野挑战营</strong></div>
+      <div class="meta"><h3>荒野挑战营</h3><p>真人秀 · 2025</p></div>
+    </article>
+    <article class="card" data-cat="variety" data-title="声音的旅程">
+      <div class="poster" style="--c1:#4a2a6b;--c2:#8a6ad4"><em>综艺</em><strong>声音的旅程</strong></div>
+      <div class="meta"><h3>声音的旅程</h3><p>音乐 / 竞演 · 2024</p></div>
+    </article>
+    <article class="card" data-cat="variety" data-title="笑点研究所">
+      <div class="poster" style="--c1:#6b3a12;--c2:#e0a04a"><em>综艺</em><strong>笑点研究所</strong></div>
+      <div class="meta"><h3>笑点研究所</h3><p>喜剧 / 脱口秀 · 2025</p></div>
+    </article>
+  </section>
+
+  <div class="empty" id="emptyTip">没有找到相关影片，换个关键词或切换分类试试。</div>
+</main>
+
+<footer>
+  <div class="foot-inner">
+    <div class="foot-col">
+      <h4>火龙果影视</h4>
+      <p>电影、电视剧、短剧、动漫、综艺内容聚合入口，分类清晰，检索快捷。</p>
+    </div>
+    <div class="foot-col">
+      <h4>快速导航</h4>
+      <p><a href="#list">最新电影</a></p>
+      <p><a href="#list">电视剧全集</a></p>
+      <p><a href="#list">短剧免费播放</a></p>
+      <p><a href="#list">动漫大全</a></p>
+    </div>
+    <div class="foot-col">
+      <h4>热门分类</h4>
+      <p><a href="#list">热门大片</a></p>
+      <p><a href="#list">手机追剧</a></p>
+      <p><a href="#list">综艺在线观看</a></p>
+      <p><a href="#list">新番连载</a></p>
+    </div>
+    <div class="foot-col">
+      <h4>使用说明</h4>
+      <p>本站仅提供内容索引与展示服务，不存储任何视频文件。</p>
+      <p>内容版权归原权利人所有，如有疑问请联系处理。</p>
+    </div>
+  </div>
+  <div class="copyright">Copyright 火龙果影视 保留所有权利</div>
+</footer>
+
+<script>
+(function(){
+  var cards = document.querySelectorAll('.card');
+  var filterBtns = document.querySelectorAll('.filter-btn');
+  var navLinks = document.querySelectorAll('nav a[data-cat]');
+  var searchInput = document.getElementById('searchInput');
+  var searchBtn = document.getElementById('searchBtn');
+  var emptyTip = document.getElementById('emptyTip');
+  var currentCat = 'all';
+
+  function render(){
+    var keyword = searchInput.value.trim().toLowerCase();
+    var shown = 0;
+    for (var i = 0; i < cards.length; i++){
+      var card = cards[i];
+      var catOk = currentCat === 'all' || card.getAttribute('data-cat') === currentCat;
+      var title = (card.getAttribute('data-title') || '').toLowerCase();
+      var kwOk = keyword === '' || title.indexOf(keyword) !== -1;
+      if (catOk && kwOk){
+        card.style.display = '';
+        shown++;
+      } else {
+        card.style.display = 'none';
+      }
+    }
+    emptyTip.style.display = shown === 0 ? 'block' : 'none';
+  }
+
+  function setCat(cat){
+    currentCat = cat;
+    for (var i = 0; i < filterBtns.length; i++){
+      if (filterBtns[i].getAttribute('data-cat') === cat){
+        filterBtns[i].classList.add('active');
+      } else {
+        filterBtns[i].classList.remove('active');
+      }
+    }
+    render();
+  }
+
+  for (var i = 0; i < filterBtns.length; i++){
+    filterBtns[i].addEventListener('click', function(){
+      setCat(this.getAttribute('data-cat'));
+    });
+  }
+
+  for (var j = 0; j < navLinks.length; j++){
+    navLinks[j].addEventListener('click', function(){
+      setCat(this.getAttribute('data-cat'));
+    });
+  }
+
+  searchBtn.addEventListener('click', render);
+  searchInput.addEventListener('keyup', function(e){
+    if (e.key === 'Enter'){
+      render();
+    }
+  });
+  searchInput.addEventListener('input', render);
+})();
+</script>
+</body>
+</html>
